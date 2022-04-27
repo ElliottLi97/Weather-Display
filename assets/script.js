@@ -29,10 +29,10 @@ function getApi() {
       })
       .then(function (data) {
         console.log(data)
-        console.log("Temperature",data.current.temp,"Wind Speed",data.current.wind_speed,"Humidity",data.current.humidity,"UVI",
-        data.current.uvi,"Date", moment.unix(data.current.dt).format("MM/DD/YYYY") )
+        console.log("Current Conditions: Temperature:",data.current.temp,"Wind Speed:",data.current.wind_speed,"Humidity:",data.current.humidity,"UVI:",
+        data.current.uvi,"Date:", moment.unix(data.current.dt).format("MM/DD/YYYY") )
         for (let i = 1; i<6; i++){
-          console.log("Temp", data.daily[i].temp.day,"wind speed",data.daily[i].wind_speed,"humidity",data.daily[i].humidity,"Date",
+          console.log("Temp:", data.daily[i].temp.day,"Wind Speed:",data.daily[i].wind_speed,"Humidity:",data.daily[i].humidity,"Date:",
           moment.unix(data.daily[i].dt).format("MM/DD/YYYY"))
         }
       })
