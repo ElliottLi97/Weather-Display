@@ -7,9 +7,70 @@
     <script type="text/javascript" 
     src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js">
     </script>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Document
+    </title>
 </head>
 <body>
+    <div class="row">
+        <aside class="col-3">
+            <div>Search for a City:</div>
+            <input type="text" class="col-12">
+            <button class="col-12">Search</button>
+            <div id="city-history">
+                <button class="col-12">Placeholder City</button>
+            </div>
+        </aside>
+        <div class="col-9 row">
+            <div class="col-12" id="current-forecast">
+                <div id="current-weather-title">
+                    Place Holder
+                </div>
+                <div id="current-weather-stats">
+                    Temp: <br>
+                    Wind: <br>
+                    Humidity: <br>
+                    UV Index: <br>
+                </div>
+            </div>
+            <div class="col-12 row" id="five-day-forecast">
+                <div class="col-12" id="five-day-title">5 Day Forecast:</div>
+                <div class="col-12 row" >
+                    <div class="col five-day-boxes">
+                        <div class="five-day-box-date">1st Day</div>
+                        Temp: <br>
+                        Wind: <br>
+                        Humidity: <br>
+                    </div>
+                    <div class="col five-day-boxes">
+                        <div class="five-day-box-date">2nd Day</div>
+                        Temp: <br>
+                        Wind: <br>
+                        Humidity: <br>
+                    </div>
+                    <div class="col five-day-boxes">
+                        <div class="five-day-box-date">3rd Day</div>
+                        Temp: <br>
+                        Wind: <br>
+                        Humidity: <br>
+                    </div>
+                    <div class="col five-day-boxes">
+                        <div class="five-day-box-date">4th Day</div>
+                        Temp: <br>
+                        Wind: <br>
+                        Humidity: <br>
+                    </div>
+                    <div class="col five-day-boxes">
+                        <div class="five-day-box-date">5th Day</div>
+                        Temp: <br>
+                        Wind: <br>
+                        Humidity: <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./assets/script.js"></script>
 </body>
 </html>
