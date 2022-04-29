@@ -14,24 +14,23 @@
 </head>
 <body>
     <div class="row">
-        <aside class="col-3">
+        <aside class="col-3 search-column">
             <div>Search for a City:</div>
-            <input type="text" class="col-12">
-            <button class="col-12">Search</button>
+            <input type="text" class="col-12" id="city-search-input">
+            <button class="col-12" id="city-search-button">Search</button>
             <div id="city-history">
-                <button class="col-12">Placeholder City</button>
             </div>
         </aside>
         <div class="col-9 row">
             <div class="col-12" id="current-forecast">
                 <div id="current-weather-title">
-                    Place Holder
+                    Place Holder 
                 </div>
                 <div id="current-weather-stats">
                     Temp: <br>
                     Wind: <br>
                     Humidity: <br>
-                    UV Index: <br>
+                    UV Index: <div class="" id="uvcolor">Red</div> <br>
                 </div>
             </div>
             <div class="col-12 row" id="five-day-forecast">
@@ -45,6 +44,7 @@
                     </div>
                     <div class="col five-day-boxes">
                         <div class="five-day-box-date">2nd Day</div>
+                        <img src="" alt=""> <br>
                         Temp: <br>
                         Wind: <br>
                         Humidity: <br>

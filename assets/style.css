@@ -1,3 +1,8 @@
+.search-column{
+    padding: 0 15px 0 30px;
+}
+
+
 .five-day-boxes{
     color: white;
     background-color: blue;
@@ -7,4 +12,28 @@
 
 #five-day-title{
     padding: 0 0 0 5px;
+}
+
+.UVLow{
+    background-color: green;
+    width: fit-content;
+    padding: 0 2px 0 2px;
+    border-radius: 5px;
+    color: white;
+}
+
+.UVMedium{
+    background-color: orange;
+    width: fit-content;
+    padding: 0 2px 0 2px;
+    border-radius: 5px;
+    color: white;
+}
+
+.UVHigh{
+    background-color: red;
+    width: fit-content;
+    padding: 0 2px 0 2px;
+    border-radius: 5px;
+    color: white;
 }
