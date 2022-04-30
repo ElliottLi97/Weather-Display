@@ -32,9 +32,9 @@ function getApi(cityinput) {
           alert("A city could not be found with that name. Please try again.")
         }else{
           console.log(data)
-          console.log(data[1].lat , data[1].lon)
-          lat = data[1].lat
-          long = data[1].lon
+          console.log(data[0].lat , data[0].lon)
+          lat = data[0].lat
+          long = data[0].lon
           cityname = data[0].name
           for (let i = 0; i < searchhistoryarray.length; i++){
             if( cityname === searchhistoryarray[i]){

@@ -3,15 +3,28 @@
 }
 
 
-.five-day-boxes{
-    color: white;
-    background-color: blue;
-    margin: 0 1% 0 1%;
-    padding: 0 5px 0 5px;
-}
+
 
 #five-day-title{
     padding: 0 0 0 5px;
+}
+
+#city-history{
+    border-top: 2px black solid;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+#city-search-button{
+    margin: 4px 0 2px 0;
+}
+
+.historybutton{
+    margin: 2px 0 2px 0;
+}
+
+#current-forecast{
+    margin: 23px 0 0 0 ;
+    border: 2px black solid;
 }
 
 .UVLow{
@@ -36,4 +49,15 @@
     padding: 0 2px 0 2px;
     border-radius: 5px;
     color: white;
+}
+
+.five-day-boxes{
+    color: white;
+    background-color: blue;
+    margin: 8px 1% 0 1%;
+    padding: 0 5px 10px 5px;
+}
+
+#five-day-forecast{
+    margin: 20px 0 0 0 ;
 }
