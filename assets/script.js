@@ -9,7 +9,7 @@ var searchhistoryarray = []
 
 searchbutton.addEventListener("click", function(){
   cityinput = citysearchinput.value.trim()
-  getApi(citysearchinput.value.trim())
+  getApi(citysearchinput.value.trim()) //take user inputs for city trims it and passes it to the geo coordinate finder API
 })
 citysearchhistory.addEventListener('click', event=>{
   cityinput = event.target.textContent
@@ -20,7 +20,7 @@ function getApi(cityinput) {
     //var requestUrl = 'https://api.github.com/users/ElliottLi97/repos';
     //var locationurl = 'http://api.openweathermap.org/geo/1.0/direct?q='+cityinput+'&limit=5&appid=1d01ab5b1c742650aa127b4ff6585e0c';
     if (document.getElementById("weather-container").style.visibility === "hidden"){
-      document.getElementById("weather-container").style.visibility = "visible"
+      document.getElementById("weather-container").style.visibility = "visible" //Unhides weather data container when the user does their first search 
     }
     let locationurltest = 'http://api.openweathermap.org/geo/1.0/direct?q='+cityinput+'&limit=5&appid=1d01ab5b1c742650aa127b4ff6585e0c';
     let lat = ""
@@ -31,28 +31,28 @@ function getApi(cityinput) {
       })
       .then(function (data) {
         if (data.length === 0){
-          alert("A city could not be found with that name. Please try again.")
+          alert("A city could not be found with that name. Please try again.") //Alerts user if their searched city returns an empty array
         }else{
           console.log(data)
           console.log(data[0].lat , data[0].lon)
-          lat = data[0].lat
-          long = data[0].lon
+          lat = data[0].lat //latitude
+          long = data[0].lon //longitude
           cityname = data[0].name
-          for (let i = 0; i < searchhistoryarray.length; i++){
+          for (let i = 0; i < searchhistoryarray.length; i++){ // logic to check for duplicat cities in the local storage / previous searched buttons
             if( cityname === searchhistoryarray[i]){
-              console.log('matching')
+              //console.log('matching')
               getweather(lat,long)
               return
             }
           }
-          searchhistoryarray.unshift(cityname)
+          searchhistoryarray.unshift(cityname) //adds new cities to start of local storage and history buttons
           let buttontemplate = '<button class="col-12">'+cityname+'</button>'
           let tempElement = document.createElement('div')
           tempElement.innerHTML = buttontemplate
           citysearchhistory.prepend(tempElement)    
           localStorage.setItem("city-names-history", JSON.stringify(searchhistoryarray))
           
-          getweather(lat,long)
+          getweather(lat,long) //passes latitude and longitue to the weather API function
           
         }
     
@@ -99,7 +99,7 @@ function getApi(cityinput) {
       })
   }
 
-function UVcheck(UVI){
+function UVcheck(UVI){ //changes uv box color 
   if (UVI<2){
     document.getElementById("uvcolor").classList.add('UVLow')
   }else if (UVI<8){
@@ -115,9 +115,9 @@ function onpageload(){
     
     return
   }
-  document.getElementById("weather-container").style.visibility = "hidden"
+  document.getElementById("weather-container").style.visibility = "hidden" //hides weather container on page load
   searchhistoryarray = JSON.parse(localStorage.getItem("city-names-history"))
-  for (let i = 0; i<searchhistoryarray.length; i++){
+  for (let i = 0; i<searchhistoryarray.length; i++){ //add history buttons based on local storage
     let buttontemplate = '<button class="col-12 historybutton">'+searchhistoryarray[i]+'</button>'
     let tempElement = document.createElement('div')
     tempElement.innerHTML = buttontemplate
@@ -126,8 +126,3 @@ function onpageload(){
 }
 onpageload()
 
-  //getApi()
-  //image template https://openweathermap.org/img/wn/10d.png
-  // let fivedaytemplate ='<div class="five-day-box-date">'+fivedaydate+'</div><img src="https://openweathermap.org/img/wn/10d.png" alt=""><br>Temp:'+fivedaytemp+'°F<br>Wind:'+fivedaywind+' MPH<br>Humidity:'+fivedayhumidity+' %<br>'
-  //'<div id="current-weather-title">'+cityinput+' '+currdate+'<img src="https://openweathermap.org/img/wn/'+curricon+'.png" alt=""></img></div><div id="current-weather-stats">  Temp:'+currtemp+'<br>  Wind:'+currwind+'<br>  Humidity:'+currhumidity+'<br>  UV Index: <div class="" id="uvcolor">'+curruvi+'</div> <br>'
-  //document.querySelector('#city-history').children[0].textContent
