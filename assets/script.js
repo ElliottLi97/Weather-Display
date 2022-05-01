@@ -116,6 +116,7 @@ function onpageload(){
     return
   }
   document.getElementById("weather-container").style.visibility = "hidden" //hides weather container on page load
+  console.log("on page load working")
   searchhistoryarray = JSON.parse(localStorage.getItem("city-names-history"))
   for (let i = 0; i<searchhistoryarray.length; i++){ //add history buttons based on local storage
     let buttontemplate = '<button class="col-12 historybutton">'+searchhistoryarray[i]+'</button>'
