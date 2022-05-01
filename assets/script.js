@@ -22,7 +22,7 @@ function getApi(cityinput) {
     if (document.getElementById("weather-container").style.visibility === "hidden"){
       document.getElementById("weather-container").style.visibility = "visible" //Unhides weather data container when the user does their first search 
     }
-    let locationurltest = 'http://api.openweathermap.org/geo/1.0/direct?q='+cityinput+'&limit=5&appid=1d01ab5b1c742650aa127b4ff6585e0c';
+    let locationurltest = 'https://api.openweathermap.org/geo/1.0/direct?q='+cityinput+'&limit=5&appid=1d01ab5b1c742650aa127b4ff6585e0c';
     let lat = ""
     let long = ""
     fetch(locationurltest)
