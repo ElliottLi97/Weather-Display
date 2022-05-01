@@ -1,12 +1,17 @@
+#weather-dashboard{
+    text-align: center;
+    background-image: linear-gradient(to right, #3462bb , #20094b);
+    color: white;
+    font-size: 24px;
+}
+
 .search-column{
     padding: 0 15px 0 30px;
 }
 
-
-
-
-#five-day-title{
-    padding: 0 0 0 5px;
+.box-headers{
+    font-size: 24px;
+    font-weight: bold;
 }
 
 #city-history{
@@ -51,11 +56,16 @@
     color: white;
 }
 
+#five-day-title{
+    padding: 0 0 0 5px;
+}
+
 .five-day-boxes{
     color: white;
-    background-color: blue;
+    background-color: #2d3e50;
     margin: 8px 1% 0 1%;
     padding: 0 5px 10px 5px;
+    border: 1px black solid;
 }
 
 #five-day-forecast{

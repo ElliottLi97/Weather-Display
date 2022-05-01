@@ -19,7 +19,9 @@ function getApi(cityinput) {
     // Insert the API url to get a list of your repos
     //var requestUrl = 'https://api.github.com/users/ElliottLi97/repos';
     //var locationurl = 'http://api.openweathermap.org/geo/1.0/direct?q='+cityinput+'&limit=5&appid=1d01ab5b1c742650aa127b4ff6585e0c';
-    
+    if (document.getElementById("weather-container").style.visibility === "hidden"){
+      document.getElementById("weather-container").style.visibility = "visible"
+    }
     let locationurltest = 'http://api.openweathermap.org/geo/1.0/direct?q='+cityinput+'&limit=5&appid=1d01ab5b1c742650aa127b4ff6585e0c';
     let lat = ""
     let long = ""
@@ -59,7 +61,7 @@ function getApi(cityinput) {
 
   function getweather(latitude, longitude){
       let locationweatheronecall = 'https://api.openweathermap.org/data/2.5/onecall?lat='+ latitude + '&lon=' + longitude 
-      + '&exclude=minutely,hourly,alerts&appid=1d01ab5b1c742650aa127b4ff6585e0c'
+      + '&exclude=minutely,hourly,alerts&appid=1d01ab5b1c742650aa127b4ff6585e0c&units=imperial'
 
       fetch(locationweatheronecall)
       .then(function (response) {
@@ -76,7 +78,7 @@ function getApi(cityinput) {
         currwind = data.current.wind_speed
         currhumidity = data.current.humidity
         curruvi = data.current.uvi
-        let currenttemplate = '<div id="current-weather-title">'+cityname+' '+currdate
+        let currenttemplate = '<div id="current-weather-title" class="box-headers">'+cityname+' '+currdate
         +'<img src="https://openweathermap.org/img/wn/'+curricon+'.png" alt=""></img></div><div id="current-weather-stats">Temp: '
         +currtemp+' °F<br>  Wind: '+currwind+' MPH<br>  Humidity: '+currhumidity
         +' %<br>  UV Index: <div class="" id="uvcolor">'+curruvi+'</div> <br>'
@@ -110,8 +112,10 @@ function UVcheck(UVI){
 function onpageload(){
   if (JSON.parse(localStorage.getItem("city-names-history")) == null){
     console.log("Local Storage Empty")
+    
     return
   }
+  document.getElementById("weather-container").style.visibility = "hidden"
   searchhistoryarray = JSON.parse(localStorage.getItem("city-names-history"))
   for (let i = 0; i<searchhistoryarray.length; i++){
     let buttontemplate = '<button class="col-12 historybutton">'+searchhistoryarray[i]+'</button>'

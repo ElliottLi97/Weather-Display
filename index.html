@@ -13,17 +13,18 @@
     </title>
 </head>
 <body>
+    <nav  class="col-12" id="weather-dashboard">Weather Dashboard</nav>
     <div class="row">
         <aside class="col-3 search-column">
-            <div>Search for a City:</div>
+            <div class ="box-headers">Search for a City:</div>
             <input type="text" class="col-12" id="city-search-input">
             <button class="col-12" id="city-search-button">Search</button>
             <div id="city-history">
             </div>
         </aside>
-        <div class="col-9 row">
+        <div class="col-9 row" id="weather-container">
             <div class="col-12" id="current-forecast">
-                <div id="current-weather-title">
+                <div id="current-weather-title box-headers">
                     Place Holder 
                 </div>
                 <div id="current-weather-stats">
@@ -34,7 +35,7 @@
                 </div>
             </div>
             <div class="col-12 row" id="five-day-forecast">
-                <div class="col-12" id="five-day-title">5 Day Forecast:</div>
+                <div class="col-12 box-headers" id="five-day-title">5 Day Forecast:</div>
                 <div class="col-12 row" >
                     <div class="col five-day-boxes">
                         <div class="five-day-box-date">1st Day</div>
