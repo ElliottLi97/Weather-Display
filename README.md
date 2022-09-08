@@ -4,6 +4,6 @@ I created a weather tracking website using a weather api. The user inputs a city
 
 The CSS and HTML is styled after a reference image and the JS code was written from scratch. 
 
-The finished site can be found [Here](https://elliottli97.github.io/Weather-Display/)
+The finished site can be found [here](https://elliottli97.github.io/Weather-Display/)
 
 ![Website Screenshot](/assets/images/Website.JPG)
